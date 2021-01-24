@@ -313,7 +313,8 @@ body {
     font-weight: 400;
     padding: 0.1rem;
     font-size: 0.9rem;
-    max-width: 37%; }
+    max-width: 37%;
+    font-size: 1rem; }
 
 .section-contact__body .envelope {
   background: linear-gradient(50deg, #e66465, #9198e5) center center/90% 72% no-repeat; }

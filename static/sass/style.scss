@@ -361,6 +361,7 @@ body{
         &-text{
             @include section-texts();
             max-width: 37%;
+            font-size: 1rem;
         
         }
     }
