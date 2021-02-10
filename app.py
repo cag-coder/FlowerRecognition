@@ -14,7 +14,7 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 
 
-model = load_model('models/LastFlowerRecognition.h5')
+model = load_model('models/mymodel.h5')
 
 @app.route('/', methods=['GET'])
 
@@ -22,15 +22,13 @@ def index():
     
     return render_template('index.html')
 
-def model_preprocessing(img_path, loaded_model):
+def model_preprocessing(img_path, model):
 
     img = image.load_img(img_path, color_mode='rgb', target_size=(128, 128))
     img_array = image.img_to_array(img, data_format='channels_last') 
-   
     img_array = np.expand_dims(img_array, axis=0)
-    img_array=np.argmax(img_array)
     classes = model.predict(img_array)
-    print(classes)
+    
     return classes
 
 
